@@ -27,7 +27,7 @@ def add_cliente():
     db.session.add(new_cliente)
     db.session.commit()
 
-    flash("Cliente added sucess!!!!")
+    flash("Cliente adicionado com sucesso!")
 
     return redirect(url_for("clientes.index"))
 
@@ -47,7 +47,7 @@ def update(id):
 
         db.session.commit()
 
-        flash("Contact update a sucess!!!!")
+        flash("Cliente atualizado com sucesso!")
 
         return redirect(url_for("clientes.index"))
     else:
@@ -61,7 +61,7 @@ def delete(id):
     db.session.delete(cliente)
     db.session.commit()
 
-    flash("Cliente deleteded sucess!!!!")
+    flash("Cliente deletado com sucesso!")
 
     return redirect(url_for("clientes.index"))
 

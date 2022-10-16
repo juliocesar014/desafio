@@ -1,0 +1,65 @@
+{% extends 'layouts.html' %}
+
+{% block body %}
+
+
+
+
+
+{% with messages = get_flashed_messages() %}
+
+{% if messages %}
+
+{% for message in messages %}
+{{ message }}
+{% endfor %}
+
+{% endif %}
+
+{% endwith %}
+
+
+
+
+<form action="/new" method="POST" class="card bg-primary text-light">
+
+    <input type="text" name="nome" placeholder="Nome do cliente">
+    <br>
+    <input type="text" name="cor1" placeholder="Cor do primerio carro">
+    <input type="text" name="modelo1" placeholder="Modelo do primeiro carro">
+    <br>
+    <input type="text" name="cor2" placeholder="Cor do segundo carro">
+    <input type="text" name="modelo2" placeholder="Modelo do segundo carro">
+    <br>
+    <input type="text" name="cor3" placeholder="Cor do terceiro carro">
+    <input type="text" name="modelo3" placeholder="Modelo do terceiro carro">
+    <br>
+    <button>
+        Cadastrar
+    </button>
+</form>
+
+<div>
+    {% for cliente in clientes %}
+
+    <div>
+        <h5>{{cliente.nome}}</h5>
+        <div>
+            <a href={{ url_for('clientes.update', id=cliente.id)}}>Update</a>
+            <a href={{ url_for('clientes.delete', id=cliente.id)}}>Delete</a>
+        </div>
+
+        <p>{{cliente.cor1}}</p>
+        <p>{{cliente.modelo1}}</p>
+        <p>{{cliente.cor2}}</p>
+        <p>{{cliente.modelo2}}</p>
+        <p>{{cliente.cor3}}</p>
+        <p>{{cliente.modelo3}}</p>
+
+    </div>
+
+    {% endfor %}
+</div>
+
+
+{% endblock %}

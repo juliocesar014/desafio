@@ -1,0 +1,18 @@
+{% extends 'layouts.html' %}
+
+{% block body %}
+
+
+<form action="/update/{{ cliente.id }}" method="POST">
+    <input type="text" name="nome" placeholder="Nome do cliente" value="{{ cliente.nome }}">
+    <input type="text" name="cor1" placeholder="Cor do primerio carro" value="{{ cliente.cor1 }}">
+    <input type="text" name="modelo1" placeholder="Modelo do primeiro carro" value="{{ cliente.modelo1 }}">
+    <input type="text" name="cor2" placeholder="Cor do segundo carro" value="{{ cliente.cor2 }}">
+    <input type="text" name="modelo2" placeholder="Modelo do segundo carro" value="{{ cliente.modelo2 }}">
+    <input type="text" name="cor3" placeholder="Cor do terceiro carro" value="{{ cliente.cor3 }}">
+    <input type="text" name="modelo3" placeholder="Modelo do terceiro carro" value="{{ cliente.modelo3 }}">
+
+    <button>Salvar</button>
+</form>
+
+{% endblock %}

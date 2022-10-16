@@ -37,13 +37,16 @@ def update(id):
     cliente = Cliente.query.get(id)
 
     if request.method == "POST":
-        nome = request.form["nome"]
-        cor1 = request.form["cor1"]
-        modelo1 = request.form["modelo1"]
-        cor2 = request.form["cor2"]
-        modelo2 = request.form["modelo2"]
-        cor3 = request.form["cor3"]
-        modelo3 = request.form["modelo3"]
+        
+        cliente.nome = request.form["nome"]
+        cliente.cor1 = request.form["cor1"]
+        cliente.modelo1 = request.form["modelo1"]
+        cliente.cor2 = request.form["cor2"]
+        cliente.modelo2 = request.form["modelo2"]
+        cliente.cor3 = request.form["cor3"]
+        cliente.modelo3 = request.form["modelo3"]
+        
+
 
         db.session.commit()
 
